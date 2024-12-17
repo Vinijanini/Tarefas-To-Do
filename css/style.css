@@ -1,0 +1,368 @@
+body {
+    background-color: #c9eaf4;
+    margin: 0;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    opacity: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a0c1cb;
+
+    animation-name: aparecer;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
+}
+
+#logo {
+    margin: 15px;
+    width: 50px;
+    filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.279));
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    margin-right: 10px;
+}
+
+nav > a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+nav > a:hover {
+    color: rgb(238, 238, 238);
+    transform: scale(1.1);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#titulo, #subtitulo {
+    opacity: 0;
+    animation-name: aparecer;
+    animation-delay: 0.5s;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+#titulo {
+    text-shadow: 2px 2px 1px rgba(12, 149, 176, 0.282);
+    text-align: center;
+    color: #555555;
+}
+
+#subtitulo {
+    font-size: 0.7em;
+    text-align: center;
+    color: #555555;
+    text-shadow: 1px 1px 1px rgba(12, 149, 176, 0.282);
+    margin-bottom: 20px;
+}
+
+section#adicionar_tarefa {
+    opacity: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #a1c9d5;
+    padding: 10px 0px 30px 0px;
+    border-radius: 15px;
+    margin: 20px auto;
+
+    animation-name: aparecer;
+    animation-delay: 0.9s;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+section#adicionar_tarefa:hover {
+    transition: 0.3s;
+    transform: translateY(-5px);
+    box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.075);
+}
+
+#titulo_novaTarefa {
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px black;
+}
+
+article#nova_tarefa {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 50%;
+    margin: auto;
+}
+
+article#nova_tarefa > label {
+    font-size: 1.1em;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+article#nova_tarefa > #botao {
+    width: 50%;
+    margin: 10px auto 0px auto;
+    border-radius: 10px;
+    border-color: #7be0ff;
+    transition: 0.3s;
+}
+
+article#nova_tarefa > #botao:hover {
+    transform: translateY(-4px);
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.225);
+}
+
+article#nova_tarefa > #botao:active {
+    transform: translateY(0px);
+    box-shadow: none;
+}
+
+input, select, textarea {
+    height: 40px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+input::placeholder {
+    font-size: 1.2em;
+}
+
+/*lista tarefas*/
+#lista_tarefas {
+    opacity: 0;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+
+    animation-name: aparecer;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.7s;
+
+}
+
+#lista_tarefas:hover {
+    transition: 0.3s;
+    transform: translateY(-5px);
+    box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.075);
+}
+
+#titulo_listaTarefas {
+    text-align: center;
+    color: #555;
+    text-shadow: 1px 1px 1px #c9eaf4;
+}
+
+#tarefas {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tarefa {
+
+    overflow-wrap: break-word;
+
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tarefa h4 {
+    margin: 0;
+    color: #333;
+}
+
+.tarefa p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.tarefa .prioridade-alta {
+    color: red;
+    font-weight: bold;
+}
+
+.tarefa .prioridade-media {
+    color: orange;
+    font-weight: bold;
+}
+
+.tarefa .prioridade-baixa {
+    color: green;
+    font-weight: bold;
+}
+
+button.remover-tarefa {
+    margin: 5px 0px;
+    border-radius: 10px;
+    background-color: rgba(255, 0, 0, 0.452);
+    transition: 0.3s;
+}
+
+button.remover-tarefa:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 14, 14, 0.645);
+}
+
+footer {
+
+    opacity: 0;
+
+    animation-name: aparecer;
+    animation-delay: 1s;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    background-color: #333;
+}
+
+footer > p {
+    margin: 10px;
+    color: white;
+    font-size: 1.4em;
+}
+
+footer > p > a {
+    color: white;
+    font-size: 1em;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*Celular*/
+@media(min-width:320px) and (max-width:500px) {
+    nav > a {
+        font-size: 0.9em;
+    }
+    #titulo {
+        font-size: 1.9em;
+    }
+    #subtitulo {
+        font-size: 0.8em;
+    }
+    section#adicionar_tarefa {
+        width: 85%;
+    }
+    #lista_tarefas {
+        width: 85%;
+    }
+    footer > p {
+        font-size: 0.9em;
+    }
+    
+    footer > p > a {
+        font-size: 0.9em;
+    }
+}
+
+/*Tablet*/
+@media(min-width:501px) and (max-width:767px) {
+    nav > a {
+        font-size: 1em;
+    }
+    #titulo {
+        font-size: 2.1em;
+    }
+    #subtitulo {
+        font-size: 1em;
+    }
+    section#adicionar_tarefa {
+        width: 70%;
+    }
+    #lista_tarefas {
+        width: 70%;
+    }
+    footer > p {
+        font-size: 1em;
+    }
+    
+    footer > p > a {
+        font-size: 1em;
+    }
+}
+
+/*Desktop menor*/
+@media(min-width:767px) and (max-width:1440px) {
+    nav > a {
+        font-size: 1.3em;
+    }
+    #titulo {
+        font-size: 2.4em;
+    }
+    #subtitulo {
+        font-size: 1.2em;
+    }
+    section#adicionar_tarefa {
+        width: 60%;
+    }
+    #lista_tarefas {
+        width: 60%;
+    }
+    footer > p {
+        font-size: 1.2em;
+    }
+    
+    footer > p > a {
+        font-size: 1.2em;
+    }
+}
+
+
+/*Desktop maior*/
+@media(min-width:1441px){
+    nav > a {
+        font-size: 1.5em;
+    }
+    #titulo {
+        font-size: 2.6em;
+    }
+    #subtitulo {
+        font-size: 1.4em;
+    }
+    section#adicionar_tarefa {
+        width: 45%;
+    }
+    #lista_tarefas {
+        width: 45%;
+    }
+    footer > p {
+        font-size: 1.4em;
+    }
+    footer > p > a {
+        font-size: 1em;
+    }
+}
